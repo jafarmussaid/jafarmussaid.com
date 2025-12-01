@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jafar Mussaid</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, sans-serif;
+      background: #fafafa;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    .nav {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 14px 0;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 15px;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .nav a:hover { color: #008080; }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      background: url('banner.jpg') center/cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+      color: white;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+    }
+
+    .hero-text {
+      position: relative;
+      max-width: 500px;
+      padding: 32px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 16px;
+      backdrop-filter: blur(6px);
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+
+    button {
+      padding: 12px 22px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-right: 12px;
+      font-size: 15px;
+    }
+
+    .primary {
+      background: #008080;
+      color: white;
+    }
+
+    .secondary {
+      background: #e4573d;
+      color: white;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 120px 8%;
+      opacity: 0;
+      animation: fadein 0.6s ease forwards;
+    }
+
+    @keyframes fadein { to { opacity: 1; } }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 48px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+
+    /* ABOUT */
+    .about {
+      display: flex;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 240px;
+      height: 240px;
+      border-radius: 16px;
+      object-fit: cover;
+      background: #ddd;
+    }
+
+    /* PROJECT CARDS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: 0.25s;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 16px;
+    }
+
+    /* TIMELINE TWO-COLUMN */
+    .journey-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline {
+      border-left: 3px solid #008080;
+      padding-left: 32px;
+    }
+
+    .event { margin-bottom: 28px; }
+
+    .event strong { color: #008080; }
+
+    /* CONTACT */
+    .contact-links {
+      margin-top: 16px;
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .contact-links a {
+      text-decoration: none;
+      color: #008080;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: #111;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <a href="#about">About</a>
+    <a href="#engineeringwork">Engineering</a>
+    <a href="#books">Books</a>
+    <a href="#journey">Journey</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- HERO + HANKO -->
+  <div id="home" class="hero" style="display:flex; justify-content:space-between; align-items:center; padding:0 8%;">
+    <div class="hero-text">
+      <h1>Jafar Mussaid</h1>
+      <h2>Founder — MÜSSAID · Open Hardware · Mechatronics · DIY Machines</h2>
+
+      <button class="primary" onclick="window.open('https://mussaid.com','_blank');">Explore MÜSSAID</button>
+      <button class="secondary" onclick="window.open('https://gitlab.com/mussaid','_blank');">MÜSSAID Projects</button>
+    </div>
+
+    <img src="hanko-green.png" alt="Hanko Seal"
+      style="width:110px; height:auto; margin-right:60px; align-self:center; transform:translateX(-32px); opacity:1; mix-blend-mode:darken; background:transparent;" />
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about">
+      <img src="portrait.jpg" alt="Portrait" />
+      <p>
+        I’m a Mechatronics Engineer and Founder of MÜSSAID, an open-hardware platform focused on CNC systems,
+        3D printing, DIY machines, and open mechanical designs.
+        I build transparent and accessible engineering tools.
+      </p>
+    </div>
+  </section>
+
+  <!-- ENGINEERING WORK -->
+  <section id="engineeringwork">
+    <h2 class="section-title">Engineering Work</h2>
+
+    <div class="projects-grid" style="grid-auto-rows:1fr;">
+      <div class="card"><img src="eng1.jpg"><h3>CNC Systems</h3></div>
+      <div class="card"><img src="eng2.jpg"><h3>3D Printing</h3></div>
+      <div class="card"><img src="eng3.jpg"><h3>Electronics & PCB</h3></div>
+    </div>
+
+    <div style="text-align:center; margin-top:48px;">
+      <button class="primary" onclick="window.open('https://www.youtube.com/@mussaidlabs','_blank');">View More Work →</button>
+    </div>
+  </section>
+
+  <!-- MY BOOKS -->
+  <section id="books">
+    <h2 class="section-title">My Books</h2>
+
+    <div class="projects-grid">
+      <div class="card">
+        <img src="book1.jpg">
+        <h3>The Open Source Workshop</h3>
+        <p>Building open-hardware machines, CNC systems, 3D printers, and DIY tools.</p>
+      </div>
+
+      <div class="card">
+        <img src="book3.jpg">
+        <h3>Safety-by-Design</h3>
+        <p>Machine safety principles, risk reduction, ISO standards, and engineering best practices.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY -->
+  <section id="journey">
+    <h2 class="section-title">My Journey</h2>
+
+    <div class="journey-grid">
+      <div class="timeline">
+        <div class="event"><strong>2013–2018</strong> — Engineering Studies</div>
+        <div class="event"><strong>2018</strong> — Renault (France)</div>
+        <div class="event"><strong>2019</strong> — Jaguar Land Rover (UK)</div>
+      </div>
+
+      <div class="timeline">
+        <div class="event"><strong>2020</strong> — Peugeot (France)</div>
+        <div class="event"><strong>2021–2023</strong> — Machine Safety — DEC Group</div>
+        <div class="event"><strong>2025</strong> — Founded MÜSSAID</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+
+    <p style="text-align:center; max-width:600px; margin:0 auto 16px;">
+      Email: contact@jafarmussaid.com
+    </p>
+
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/jafarmussaid" target="_blank">LinkedIn</a>
+      <a href="https://x.com/jafarmussaid" target="_blank">X</a>
+      <a href="https://www.youtube.com/@mussaidlabs" target="_blank">YouTube</a>
+      
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Jafar Mussaid — All Rights Reserved
+  </footer>
+
+</body>
+</html>
